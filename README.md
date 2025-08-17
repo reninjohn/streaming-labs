@@ -60,9 +60,14 @@ Average segment duration (s): 4.000
 
 If you pass a **master** playlist, the tool detects it and exits non-zero:
 
+```bash
+python tools/hls_probe.py examples/demo_master.m3u8
 ```
-Playlist type: MASTER (variants present).
-Tip: run this tool on a **media** playlist (the one with #EXTINF segments).
+
+**Output**
+```
+Playlist type: MASTER (master-only tag present).
+Tip: run this tool on a media playlist (with #EXTINF segments).
 ```
 
 > **Why the distinction?** Master playlists describe variants (bitrate/resolution/codecs).

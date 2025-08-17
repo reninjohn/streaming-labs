@@ -29,7 +29,7 @@ RE_MEDIA_ALT = re.compile(r"^#EXT-X-MEDIA(?::|,|\s|$)")  # alt renditions tag (m
 
 def _read_text(path_or_url: str) -> str:
     if path_or_url.startswith(("http://", "https://")):
-        req = urllib.request.Request(path_or_url, headers={"User-Agent": "hls-probe/0.1"})
+        req = urllib.request.Request(path_or_url, headers={"User-Agent": "hls-probe/0.1.0"})
         with urllib.request.urlopen(req, timeout=15) as resp:
             charset = resp.headers.get_content_charset() or "utf-8"
             return resp.read().decode(charset, errors="replace")
